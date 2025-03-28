@@ -1,0 +1,45 @@
+.dashboard-card-container {
+  width: 32%;
+  aspect-ratio: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6918e8;
+  color: #ffffff;
+  border-radius: 15px;
+  transition: transform 0.5s ease-in-out;
+  font-size: clamp(15px, 2vw, 100px);
+  min-width: 250px;
+  margin-bottom: 5%;
+  margin-left: 1vw;
+}
+
+.dashboard-card-container:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.Presentation {
+  width: 9vw;
+  aspect-ratio: 1;
+  min-width: 115px;
+}
+
+.Real {
+  width: 8.5vw;
+  aspect-ratio: 1.15;
+  min-width: 109px;
+}
+.Chatting {
+  width: 5.7vw;
+  aspect-ratio: 0.68;
+  min-width: 73px;
+}
+.dashboard-card-container img,
+.dashboard-card-container span {
+  transition: none !important;
+}
+
+@media only screen and (max-width: 1100px) {
+  .dashboard-card-container {
+  }
+}

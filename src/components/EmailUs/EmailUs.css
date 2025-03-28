@@ -1,0 +1,52 @@
+.email-us-container {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 79%;
+  height: 14.4vw;
+  min-height: 100px;
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f1f1f1f1;
+  position: relative;
+  background-image: url("../../AssetsFolder/emailUsImg.png"); /* Replace with your actual image */
+  background-size: auto 140%; /* Keeps the image height 100% */
+  background-position: right center; /* Positions the image to the right */
+  background-repeat: no-repeat;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.email-us-container h1 {
+  font-size: clamp(13px, 1.8vw, 1111px);
+  margin: 0;
+  padding: 0;
+}
+.input-container {
+  width: 25.3vw;
+  height: 5.3vh;
+  min-width: 200px;
+  min-height: 25px;
+  position: relative;
+}
+
+.email-button {
+  width: 6.2vw;
+  height: 3.7vh;
+  min-width: 60px;
+  position: absolute;
+  right: 3%;
+  top: 23%;
+  background-color: #ffb700;
+  border: none;
+  border-radius: 5px;
+}
+
+.email-input {
+  width: 100%;
+  height: 100%;
+  padding-left: 3.2%;
+  border: none;
+}

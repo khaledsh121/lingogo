@@ -1,0 +1,61 @@
+.real-scenario-select-level-container {
+  width: 79%;
+  min-height: 85vh;
+  margin-top: 15vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.real-scenario-select {
+  display: flex;
+  flex-grow: 1;
+  height: 80vh;
+  justify-content: center;
+  gap: 5%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.levels {
+  position: relative;
+  min-width: 400px;
+  min-height: 80vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.levels::-webkit-scrollbar {
+  width: 0.5vw;
+  min-width: 5px;
+}
+
+.levels::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.levels::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.levels::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.scene-profile-img {
+  width: 80px;
+  aspect-ratio: 1;
+  z-index: 2;
+}
+
+.level-img {
+  width: 80px;
+  aspect-ratio: 1;
+}
+
+.SceneImg {
+  width: 32.5vw;
+  height: 22vw;
+  min-width: 350px;
+  min-height: 236px;
+}

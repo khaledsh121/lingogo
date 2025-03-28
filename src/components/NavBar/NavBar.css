@@ -1,0 +1,58 @@
+.NavBar-container {
+  width: 100%;
+  min-height: 15vh;
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  position: fixed;
+  top: 0;
+  z-index: 99999999;
+}
+
+.NavBar-Logo-anchor {
+  width: 19.5%;
+  height: 36.2%;
+}
+.navBar-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.NavBar-links-Container {
+  width: 41.1%;
+  color: #7a54b7;
+  font-size: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavBar-links-Container a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.NavBar-links-Container a:visited {
+  color: inherit;
+}
+
+.NavBar-links-Container a:hover {
+  color: #7a54b7;
+}
+
+.NavBar-SignUp_btn {
+  width: 15.2%;
+  height: 42.7%;
+  font-size: 1.5vw;
+  font-family: "Cairo";
+  color: #ffffff;
+  background: #7a54b7;
+  border: none;
+  border-radius: 5px;
+}

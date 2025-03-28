@@ -1,0 +1,225 @@
+.create-presentation-container {
+  width: 79%;
+  height: 85vh;
+  margin-top: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create-proccess {
+  flex-grow: 1;
+  min-height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.show-all-slides {
+  width: 15%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.show-all-slides::-webkit-scrollbar {
+  width: 0.5vw;
+  min-width: 5px;
+  min-height: 5px;
+  height: 0.5vh;
+}
+
+.show-all-slides::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.show-all-slides::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.show-all-slides::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.Previous-slide {
+  width: 90%;
+  aspect-ratio: 1;
+  background-color: #6918e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.Previous-slide:hover {
+  cursor: pointer;
+}
+
+.show-all-slides img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+}
+
+.show-all-slides button {
+  width: 90%;
+  height: 4vh;
+  border: none;
+  border-radius: 15px;
+  background-color: #6918e8;
+  color: #ffffff;
+  font-size: clamp(15px, 3vh, 1000px);
+}
+
+.show-all-slides button:hover {
+  cursor: pointer;
+}
+
+.create-presentation-process {
+  width: 60%;
+  height: 75vh;
+  background-color: #6918e81a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.native-language-input-container {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 3%;
+}
+
+.native-language-input-container input {
+  width: 80%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+  position: relative;
+  background-color: transparent;
+  font-size: clamp(15px, 2vw, 1000px);
+}
+
+.create-presentation-process input::placeholder {
+  color: #6918e833;
+  opacity: 1;
+}
+.create-presentation-process input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.native-language-input-container select {
+  width: 10%;
+  border-radius: 5px;
+  aspect-ratio: 1;
+  background-color: #6918e8;
+  color: #ffffff;
+  font-size: clamp(15px, 1.1vw, 1000px);
+}
+.native-language-input-container select:hover {
+  cursor: pointer;
+}
+.create-presentation-process img {
+  width: 60%;
+  max-height: 60%;
+  aspect-ratio: 1;
+}
+
+.create-presentation-process label {
+  width: 90%;
+  height: 10%;
+  font-size: clamp(15px, 2vw, 1000px);
+  text-align: center;
+}
+.finsh-presentation-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+  gap: 5%;
+}
+.finsh-presentation-btn-container button {
+  width: 20%;
+  height: 5vh;
+  min-height: 20px;
+  background-color: #6918e8;
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+.finsh-presentation-btn-container button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .create-proccess {
+    /* justify-content: center; */
+    gap: 4%;
+  }
+  .create-presentation-process {
+    min-width: 420px;
+  }
+  .finsh-presentation-btn-container {
+    height: 5vh;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .show-all-slides {
+    display: flex;
+    width: 80%;
+    height: auto;
+    max-height: 40vh;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+    gap: 10px;
+    z-index: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .show-all-slides button {
+    width: 20%;
+  }
+  .Previous-slide {
+    width: 20%;
+    flex-shrink: 0;
+  }
+
+  .create-proccess {
+    justify-content: center;
+    padding: 0;
+    height: 60vh;
+    padding-bottom: 15px;
+  }
+
+  .create-presentation-process {
+    width: 80%;
+
+    height: 60vh;
+    min-width: 300px;
+  }
+  .native-language-input-container input {
+    width: 75%;
+  }
+  .native-language-input-container select {
+    width: 15%;
+  }
+}

@@ -1,0 +1,84 @@
+.presentation-container {
+  width: 79%;
+  min-height: 85vh;
+  margin-top: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.create-presentation {
+  flex-grow: 1;
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 7%;
+}
+
+.create-presentation-start-btn {
+  width: 40%;
+  aspect-ratio: 1;
+  min-width: 450px;
+  background-color: #6918e8;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  margin-bottom: 5%;
+}
+
+.create-presentation-start-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.create-presentation-start-text {
+  width: 80%;
+  height: 80%;
+  border: 1px dashed #ffffff;
+  border-radius: 15px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #ffffff;
+  font-size: clamp(20px, 2vw, 1000px);
+  gap: 10%;
+}
+
+.no-presntarion-created {
+  width: 40%;
+  aspect-ratio: 1.33;
+  min-width: 450px;
+  margin-bottom: 5%;
+}
+.scroll {
+  width: 35%;
+  aspect-ratio: 1;
+  min-width: 450px;
+  margin-bottom: 5%;
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.previos-presentation-firt-pic {
+  width: 200px;
+  height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .create-presentation-start-btn {
+    min-width: 300px;
+  }
+  .create-presentation img {
+    min-width: 300px;
+  }
+  .scroll {
+    min-width: 300px;
+  }
+}

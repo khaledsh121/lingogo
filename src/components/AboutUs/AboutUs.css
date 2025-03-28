@@ -1,0 +1,45 @@
+.aboutUs-container {
+  width: 100%;
+  min-height: 85vh;
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+  box-sizing: border-box;
+  background-color: #6918e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aboutUs-text-container {
+  width: 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .aboutUs-container {
+    justify-content: center;
+    padding-bottom: 7%;
+  }
+  .aboutUs-text-container {
+    width: 100%;
+  }
+}
+
+.about-us-header {
+  font-size: clamp(30px, 3vw, 10000px);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.about-us-paragraph {
+  font-size: clamp(25px, 1.5vw, 10000px);
+  text-align: justify;
+  color: #ffffff;
+  width: 100%;
+}
+
+.aboutUs-img {
+  width: 40%;
+  min-width: 300px;
+  aspect-ratio: 1.06;
+}

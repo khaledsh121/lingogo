@@ -1,0 +1,11 @@
+.counter {
+  color: #6918e8;
+  font-size: clamp(40px, 5.3vw, 7000px);
+  text-align: center;
+}
+
+.counter-description {
+  color: #ffd700;
+  font-size: clamp(20px, 1.5vw, 7000px);
+  text-align: center;
+}
