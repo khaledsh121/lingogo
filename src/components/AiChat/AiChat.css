@@ -1,0 +1,57 @@
+.aichat-container {
+  width: 79%;
+  min-height: 85vh;
+  margin-top: 15vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ai-chat {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.Robot {
+  display: block;
+  width: 50%;
+  height: 50vh;
+  min-width: 250px;
+  object-fit: contain;
+}
+.chats-container {
+  height: 57%;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.chats-container div {
+  width: 232px;
+  height: 232px;
+  background-color: #6918e8;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.chats-container div:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 800px) {
+  .Robot {
+    min-width: 300px;
+    height: 300px;
+  }
+}

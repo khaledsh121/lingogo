@@ -1,0 +1,27 @@
+.intro-container {
+  width: 100%;
+  min-height: 85vh;
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.intro-welcome-container {
+  font-family: "Cairo";
+  font-size: clamp(40px, 3.3vw, 7000px);
+  line-height: 1;
+}
+
+.intro-welcome-container span {
+  color: #7a54b7;
+}
+
+.intro-welcome-img {
+  width: 66%;
+  min-width: 300px;
+  aspect-ratio: 1.56;
+}

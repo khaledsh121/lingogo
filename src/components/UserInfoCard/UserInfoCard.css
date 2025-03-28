@@ -1,0 +1,23 @@
+.user-info-card-container {
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  margin-bottom: 5%;
+  margin-left: 1vw;
+  background-color: #6918e81a;
+  color: #6918e8;
+  font-weight: bold;
+  font-size: clamp(10px, 1.2vw, 100px);
+  min-width: 200px;
+}
+
+.percentage {
+  width: 100px;
+  height: 100px;
+}
+
+.user-info-card-container span {
+  width: 40%;
+}

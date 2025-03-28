@@ -1,0 +1,34 @@
+.pages-container {
+  width: 12vw;
+  height: 85vh;
+  min-width: 150px;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  padding-top: 10%;
+  box-sizing: border-box;
+}
+
+.page {
+  background-color: #6918e833;
+  width: 100%;
+  aspect-ratio: 3;
+  color: #6918e8;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(12px, 1vw, 1000px);
+}
+
+.active-page {
+  background-color: #6918e8;
+  color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .pages-container {
+    display: none;
+  }
+}

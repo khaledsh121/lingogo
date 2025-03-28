@@ -1,0 +1,13 @@
+.opinions-container {
+  width: 100%;
+  min-height: 90vh;
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+  box-sizing: border-box;
+}
+
+.opinions-container h1 {
+  font-size: 3vw;
+  color: #6918e8;
+  text-decoration: none;
+}

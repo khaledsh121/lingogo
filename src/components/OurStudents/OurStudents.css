@@ -1,0 +1,69 @@
+.our-students-container {
+  width: 79vw;
+  /* padding-left: 10.4%;
+  padding-right: 10.4%; */
+  min-height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.our-student-img-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.our-student-img-container h1 {
+  font-size: clamp(30px, 3vw, 10000px);
+  color: #6918e8;
+  text-decoration: none;
+}
+
+.our-students-img {
+  width: 33vw;
+  min-width: 300px;
+  aspect-ratio: 1.08;
+  padding-top: 5%;
+}
+
+.counters-container {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.first-counter-container {
+  margin-bottom: 10%;
+}
+
+.first-counter-container,
+.second-counter-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .our-students-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  .our-student-img-container {
+    height: auto;
+  }
+  .img {
+    width: 79vw;
+    display: flex;
+    justify-content: center;
+  }
+  .counters-container {
+    width: 100%;
+  }
+}
