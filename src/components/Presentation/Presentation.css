@@ -70,7 +70,9 @@
   width: 200px;
   height: 200px;
 }
-
+.previos-presentation-firt-pic:hover {
+  cursor: pointer;
+}
 @media only screen and (max-width: 600px) {
   .create-presentation-start-btn {
     min-width: 300px;

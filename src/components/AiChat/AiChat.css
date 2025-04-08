@@ -9,10 +9,13 @@
 .ai-chat {
   flex: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding-bottom: 20px;
   box-sizing: border-box;
+  overflow-x: hidden;
+  flex-direction: column;
 }
 
 .Robot {
@@ -45,6 +48,40 @@
 }
 
 .chats-container div:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.chats-scroll {
+  flex-grow: 1;
+  max-width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.chats-scroll .chat-card {
+  width: 150px;
+  height: 150px;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: #000000 1px solid;
+  border-radius: 10px;
+  background-color: #6918e8;
+  color: #ffffff;
+  transition: all 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.chats-scroll .chat-card:hover {
   cursor: pointer;
   transform: scale(1.1);
 }

@@ -1,9 +1,33 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import axios from "axios";
+import { serverURI } from "../../Api/Api";
+import { saveTimeUtil } from "../../Utils/Utils";
+import AthunticatedNavBar from "../../components/AthunticatedNavBar/AthunticatedNavBar";
 
 const ProtectedRoute = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
+  const [timeSpent, setTimeSpent] = useState(0);
+
+  useEffect(() => {
+    const savedTime = localStorage.getItem("timeSpent");
+    const initialTime =
+      savedTime && !isNaN(Number(savedTime)) ? Number(savedTime) : 0;
+    setTimeSpent(initialTime);
+
+    const timer = setInterval(() => {
+      setTimeSpent((prevTime) => {
+        const newTime = prevTime + 1;
+        if (newTime % 60 === 0) {
+          saveTimeUtil(newTime);
+        }
+        localStorage.setItem("timeSpent", newTime);
+        return newTime;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -14,7 +38,7 @@ const ProtectedRoute = () => {
       }
 
       try {
-        axios.get("http://localhost:5000/navigate/", {
+        await axios.get(serverURI + "/navigate/", {
           params: { whereto: "Dashboard" },
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
@@ -24,7 +48,7 @@ const ProtectedRoute = () => {
       } catch (error) {
         console.error("Auth check failed:", error);
 
-        if (error.response && error.response.status === 401) {
+        if (error.response?.status === 401) {
           localStorage.removeItem("token");
         }
 
@@ -36,7 +60,15 @@ const ProtectedRoute = () => {
   }, []);
 
   if (isAuthenticated === null) return null;
-  return isAuthenticated ? <Outlet /> : <Navigate to="/Login" />;
+
+  return isAuthenticated ? (
+    <>
+      <AthunticatedNavBar />
+      <Outlet />
+    </>
+  ) : (
+    <Navigate to="/Login" />
+  );
 };
 
 export default ProtectedRoute;

@@ -1,3 +1,7 @@
 .App {
   font-family: "Cairo";
 }
+
+button:hover {
+  cursor: pointer;
+}

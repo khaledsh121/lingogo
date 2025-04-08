@@ -9,7 +9,9 @@ const SubmitPresentation = () => {
   const navigate = useNavigate();
   const handleSavePresentation = () => {
     savePresentation(prevPresentation);
-    // navigate("/SubmitPresentation");
+    navigate("/ShowPresentation", {
+      state: { presentation: { slides: prevPresentation } },
+    });
   };
   const handleReturnClick = () => {
     navigate("/createPresentation", { state: { prevPresentation } });

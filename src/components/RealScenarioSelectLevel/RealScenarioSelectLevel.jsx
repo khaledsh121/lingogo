@@ -78,10 +78,26 @@ const RealScenarioSelectLevel = () => {
                       transform: hoveredIndex === i ? "scale(0.7)" : "scale(1)",
                       transition: "transform 0.3s ease-in-out",
                     }}
-                    onMouseDown={() => setHoveredIndex(i)}
-                    onMouseUp={() => setHoveredIndex(null)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    onClick={() => handleLevelClick(i)}
+                    onMouseDown={
+                      i + 1 <= currentLevel
+                        ? () => setHoveredIndex(i)
+                        : undefined
+                    }
+                    onMouseUp={
+                      i + 1 <= currentLevel
+                        ? () => setHoveredIndex(null)
+                        : undefined
+                    }
+                    onMouseLeave={
+                      i + 1 <= currentLevel
+                        ? () => setHoveredIndex(null)
+                        : undefined
+                    }
+                    onClick={
+                      i + 1 <= currentLevel
+                        ? () => handleLevelClick(i)
+                        : undefined
+                    }
                   />
 
                   {i < positions.length - 1 &&

@@ -31,4 +31,5 @@
   width: 6.7%;
   min-width: 80px;
   aspect-ratio: 1;
+  border-radius: 50%;
 }

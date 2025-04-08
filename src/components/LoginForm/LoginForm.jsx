@@ -5,35 +5,37 @@ import ConnectWithSocial from "../ConnectWithSocial/ConnectWithSocial";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { backendNavigation } from "../../Utils/Utils";
-
+import { serverURI } from "../../Api/Api";
 const LoginForm = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [creidntials, setCreidntials] = useState(false);
 
   useEffect(() => {
     if (token) navigate("/dashboard");
   }, [token, navigate]);
 
   const handleEmailChange = (event) => {
+    setCreidntials(false);
     setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
+    setCreidntials(false);
     setPassword(event.target.value);
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     await axios
-      .post("http://localhost:5000/auth/login", {
+      .post(serverURI + "/auth/login", {
         email: email,
         password: password,
       })
       .then((response) => {
-        console.log(response);
         if (response.data.success) {
           localStorage.setItem("token", response.data.token);
           backendNavigation(navigate, "/dashboard");
@@ -42,6 +44,7 @@ const LoginForm = () => {
         }
       })
       .catch((error) => {
+        setCreidntials(true);
         console.error("Error submitting data:", error);
       });
   };
@@ -74,6 +77,9 @@ const LoginForm = () => {
           />
           <img src={PasswordIcon} alt="Password Icon" className="icns" />
         </div>
+        {creidntials && (
+          <div className="used-email">wrong email or password</div>
+        )}
         <button className="login-btn" type="submit">
           Login Now
         </button>

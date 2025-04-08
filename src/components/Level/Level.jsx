@@ -34,17 +34,35 @@ const Level = () => {
   const [fullLevel, setFullLevel] = useState({});
 
   useEffect(() => {
-    const fetchLevel = async () => {
+    const fetchLevelData = async () => {
       const level = await getLevel(currentLevel);
       if (!level) return;
 
-      const translatedTopic = await fetchTranslation(level?.topic);
-      const currentQ = level?.questions[currentQuestion];
+      setFullLevel(level);
 
+      const translatedTopic = await fetchTranslation(level?.topic, "native");
+      setSelectedLevel((prev) => ({ ...prev, translatedTopic }));
+
+      setFullAnswers((prev) => ({
+        ...prev,
+        topic: level.topic,
+        topicId: level.id,
+      }));
+    };
+
+    fetchLevelData();
+  }, [currentLevel]);
+
+  useEffect(() => {
+    const fetchQuestion = async () => {
+      const currentQ = fullLevel?.questions?.[currentQuestion];
       if (!currentQ) return;
 
-      const translatedQuestion = currentQ.question;
       const translatedAnswer = await fetchTranslation(currentQ.answer);
+      const translatedQuestion = await fetchTranslation(
+        currentQ.question,
+        "native"
+      );
       const translatedOptions = await Promise.all(
         currentQ.options.map(async (item) => ({
           translatedOption: await fetchTranslation(item),
@@ -52,22 +70,18 @@ const Level = () => {
         }))
       );
 
-      setFullAnswers((prev) => ({
-        ...prev,
-        topic: level.topic,
-        topicId: level.id,
-      }));
       setAnswer(translatedAnswer);
-      setSelectedLevel({
-        translatedTopic,
+      setSelectedLevel((prev) => ({
+        ...prev,
         translatedQuestion,
         translatedOptions,
-      });
-      setFullLevel(level);
+      }));
     };
 
-    fetchLevel();
-  }, [currentLevel, currentQuestion]);
+    if (fullLevel.questions) {
+      fetchQuestion();
+    }
+  }, [currentQuestion, fullLevel]);
 
   const handleSubmitAnswer = () => {
     const normalizedAnswer = answer.trim().toLowerCase();

@@ -12,6 +12,7 @@ const CreatePresentation = () => {
   const [ImgURI, setImgURI] = useState(Image);
   const [itemToFetch, setItemToFetch] = useState("");
   const [translation, setTranslation] = useState("");
+  const [fetchingData, setFetchingData] = useState(false);
   const [prevPresentation, setprevPresentation] = useState(
     location.state?.prevPresentation || []
   );
@@ -69,12 +70,14 @@ const CreatePresentation = () => {
 
   useEffect(() => {
     const fetchImageAndTranslation = async () => {
+      setFetchingData(true);
       try {
         const imageURI = await fetchImageFromGoogleAPI(itemToFetch);
         setImgURI(imageURI);
 
         const translation = await fetchTranslation(itemToFetch, "en", "ar");
         setTranslation(translation);
+        setFetchingData(false);
       } catch (err) {
         console.log(err);
       }
@@ -114,10 +117,6 @@ const CreatePresentation = () => {
         </div>
         <div className="create-presentation-process">
           <div className="native-language-input-container">
-            <select>
-              <option>en</option>
-              <option>ar</option>
-            </select>
             <input
               type="text"
               onChange={handleUserChangeInput}
@@ -125,9 +124,16 @@ const CreatePresentation = () => {
               value={nativeLanguageInput}
             />
           </div>
-          <img src={ImgURI} alt={nativeLanguageInput} />
+          {fetchingData ? (
+            <div className="image-loading">Loading...</div> // Or use a spinner
+          ) : (
+            <img src={ImgURI} alt={nativeLanguageInput} />
+          )}
           <label>{translation}</label>
           <div className="finsh-presentation-btn-container">
+            {prevPresentation.length < 10 ? (
+              <div>At least 10 slides must be created</div>
+            ) : null}
             <button
               onClick={handleFinishPresentationClick}
               disabled={prevPresentation.length < 10}

@@ -7,14 +7,14 @@
   align-items: center;
   justify-content: space-around;
   gap: 20px;
+  padding-bottom: 20px;
 }
 
 .personal-info {
-  width: 23%;
+  width: 100%;
   min-width: 300px;
   height: 24vh;
   min-height: 219px;
-  min-width: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,18 +24,19 @@
 .personal-info img {
   width: 155px;
   height: 155px;
+  border-radius: 50%;
 }
 
 .personal-info label {
-  width: 100%;
   height: 20%;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #6918e8;
-  border-radius: 10px;
+  border-radius: 15px;
   color: #ffffff;
-  font-size: 30px;
+  font-size: clamp(15px, 1.5vw, 1000px);
 }
 
 .student-learning-info {
@@ -69,7 +70,12 @@
   align-items: center;
   gap: 5%;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.first-info div:hover,
+.last-info div:hover {
+  cursor: pointer;
 }
 
 .TrophyImg {
@@ -90,4 +96,36 @@
 .Languageimg {
   width: 51.5%;
   height: 51.5%;
+}
+
+.selected {
+  margin: 0 !important;
+  height: 100%;
+  background-color: #ffce00 !important;
+}
+
+.selected * {
+  width: 150px;
+  height: 50px;
+  margin: 10px;
+  background-color: #6918e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm {
+  width: 150px;
+  height: 50px;
+  margin: 10px;
+  background-color: #6918e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+}
+.confirm:hover {
+  cursor: pointer;
 }

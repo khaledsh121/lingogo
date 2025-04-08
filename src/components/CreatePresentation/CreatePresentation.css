@@ -57,7 +57,30 @@
   align-items: center;
   border-radius: 15px;
 }
+.image-loading {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
 
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
 .Previous-slide:hover {
   cursor: pointer;
 }
@@ -97,18 +120,19 @@
   width: 90%;
   height: 10%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 3%;
 }
 
 .native-language-input-container input {
   width: 80%;
   height: 100%;
-  border: none;
+  border: 1px, solid, #000000;
   border-radius: 15px;
   position: relative;
   background-color: transparent;
   font-size: clamp(15px, 2vw, 1000px);
+  padding-left: 10px;
 }
 
 .create-presentation-process input::placeholder {
@@ -148,8 +172,10 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-right: 5%;
   gap: 5%;
+  color: #6918e8;
 }
 .finsh-presentation-btn-container button {
   width: 20%;

@@ -5,9 +5,12 @@ import { Presentaition } from "../../AssetsFolder/Images";
 import { RealScenario } from "../../AssetsFolder/Images";
 import { AiAssisstant } from "../../AssetsFolder/Images";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getUserData } from "../../Utils/Utils";
 
-const UserDashboard = ({ userName }) => {
+const UserDashboard = () => {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState();
 
   const cards = [
     {
@@ -42,6 +45,14 @@ const UserDashboard = ({ userName }) => {
     { percentage: 40, desc: "Grammer" },
     { percentage: 60, desc: "Writing Skills" },
   ];
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      const userData = await getUserData();
+      setUserName(userData.username);
+    };
+    fetchUserName();
+  }, []);
 
   return (
     <div className="user-dashboard-container">

@@ -18,7 +18,6 @@ const Presentation = () => {
       try {
         const data = await getPresentations();
         setUserPresentations(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching presentations:", error);
       }
@@ -49,6 +48,11 @@ const Presentation = () => {
                   alt="user presentation img"
                   className="previos-presentation-firt-pic"
                   key={index}
+                  onClick={() => {
+                    navigate("/ShowPresentation", {
+                      state: { presentation: item },
+                    });
+                  }}
                 />
               );
             })}

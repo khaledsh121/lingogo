@@ -1,0 +1,48 @@
+.show-presentation-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.show-presentation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #6918e8;
+  padding: 0;
+}
+
+.show-presentation img {
+  width: 30%;
+  aspect-ratio: 1;
+  min-width: 300px;
+}
+
+.show-presentation label {
+  color: #6918e8;
+  padding: 15px;
+  font-size: clamp(15px, 2vw, 1000px);
+  background-color: #ffce00;
+  border-radius: 5px;
+}
+.center {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 150px;
+}
+
+.return-btn {
+  width: 150px;
+  height: 40px;
+  border: none;
+  font-size: 17px;
+}
