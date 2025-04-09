@@ -1,1 +1,1 @@
-export const serverURI = "https://lingogo-backend-production.up.railway.app/";
+export const serverURI = "http://localhost:5000";

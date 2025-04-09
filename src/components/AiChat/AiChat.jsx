@@ -16,7 +16,6 @@ const AiChat = () => {
   useEffect(() => {
     const fetchUserChats = async () => {
       const userChats = await getUserChats();
-      console.log(userChats);
       setUserChats(userChats);
     };
     fetchUserChats();
@@ -42,7 +41,7 @@ const AiChat = () => {
               >
                 {item.messages.map((message, i) => (
                   <div key={i}>
-                    {message.userMessage}
+                    {message.message}
                     <br />
                   </div>
                 ))}

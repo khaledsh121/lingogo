@@ -132,7 +132,9 @@ const CreatePresentation = () => {
           <label>{translation}</label>
           <div className="finsh-presentation-btn-container">
             {prevPresentation.length < 10 ? (
-              <div>At least 10 slides must be created</div>
+              <div>
+                At least 10 slides must be created [{prevPresentation.length}]
+              </div>
             ) : null}
             <button
               onClick={handleFinishPresentationClick}

@@ -2,21 +2,16 @@ import "../LoginForm/LoginForm.css";
 import { UserIcon, PasswordIcon } from "../../AssetsFolder/Images";
 import { useNavigate } from "react-router-dom";
 import ConnectWithSocial from "../ConnectWithSocial/ConnectWithSocial";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { backendNavigation } from "../../Utils/Utils";
 import { serverURI } from "../../Api/Api";
 const LoginForm = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [creidntials, setCreidntials] = useState(false);
-
-  useEffect(() => {
-    if (token) navigate("/dashboard");
-  }, [token, navigate]);
 
   const handleEmailChange = (event) => {
     setCreidntials(false);

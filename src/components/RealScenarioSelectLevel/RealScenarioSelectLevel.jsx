@@ -8,7 +8,7 @@ import {
   DisactiveLevel,
 } from "../../AssetsFolder/Images";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getUserLevel } from "../../Utils/Utils";
+import { getUserImg, getUserLevel } from "../../Utils/Utils";
 
 const RealScenarioSelectLevel = () => {
   const location = useLocation();
@@ -19,6 +19,7 @@ const RealScenarioSelectLevel = () => {
     location?.state?.currentLevel || 1
   );
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [userImg, setUserImg] = useState(null);
 
   const navigate = useNavigate();
 
@@ -38,7 +39,9 @@ const RealScenarioSelectLevel = () => {
   useEffect(() => {
     const fetchUserLevel = async () => {
       const userLevel = await getUserLevel();
+      const userImg = await getUserImg();
       setCurrentLevel(userLevel);
+      setUserImg(userImg);
     };
     fetchUserLevel();
   }, []);
@@ -51,7 +54,7 @@ const RealScenarioSelectLevel = () => {
           <div>
             <div className="levels">
               <img
-                src={DemoImg}
+                src={userImg ? userImg : DemoImg}
                 alt="profile img"
                 className="scene-profile-img"
                 style={{

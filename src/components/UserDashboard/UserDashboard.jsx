@@ -6,11 +6,20 @@ import { RealScenario } from "../../AssetsFolder/Images";
 import { AiAssisstant } from "../../AssetsFolder/Images";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getUserData } from "../../Utils/Utils";
+import { getUserData, getUserPreformnce } from "../../Utils/Utils";
 
 const UserDashboard = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState();
+  const [preformnce, setPreformnce] = useState();
+
+  useEffect(() => {
+    const fetchUserPreformnce = async () => {
+      const response = await getUserPreformnce();
+      setPreformnce(response ? response[0] : null);
+    };
+    fetchUserPreformnce();
+  }, []);
 
   const cards = [
     {
@@ -39,13 +48,6 @@ const UserDashboard = () => {
     },
   ];
 
-  const infoCards = [
-    { percentage: 70, desc: "Over All" },
-    { percentage: 20, desc: "Vocabulary" },
-    { percentage: 40, desc: "Grammer" },
-    { percentage: 60, desc: "Writing Skills" },
-  ];
-
   useEffect(() => {
     const fetchUserName = async () => {
       const userData = await getUserData();
@@ -69,9 +71,22 @@ const UserDashboard = () => {
         ))}
       </div>
       <div className="user-info-container">
-        {infoCards.map((item, index) => {
-          return <UserInfoCard {...item} key={index} />;
-        })}
+        <UserInfoCard
+          percentage={preformnce ? preformnce.Overall : 0}
+          desc="Overall"
+        />
+        <UserInfoCard
+          percentage={preformnce ? preformnce?.Vocabulary : 0}
+          desc="Vocabulary"
+        />
+        <UserInfoCard
+          percentage={preformnce ? preformnce?.Grammar : 0}
+          desc="Grammar"
+        />
+        <UserInfoCard
+          percentage={preformnce ? preformnce["Writing Skills"] : 0}
+          desc="Writing Skills"
+        />
       </div>
     </div>
   );

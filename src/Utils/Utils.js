@@ -5,7 +5,6 @@ export const backendNavigation = async (navigate, whereto) => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      console.log("No token found");
       navigate("/Login", { replace: true });
       return;
     }
@@ -249,17 +248,11 @@ export const getUserImg = async () => {
 
 export const updateUserInfo = async (userData) => {
   try {
-    const response = await axios.put(
-      serverURI + "/getUserData/update",
-      userData,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-
-    console.log("User updated:", response.data.user);
+    await axios.put(serverURI + "/getUserData/update", userData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
   } catch (error) {
     console.error(
       "Error updating user:",
@@ -281,4 +274,23 @@ export const saveTimeUtil = async (time) => {
       },
     }
   );
+};
+
+export const getUserPreformnce = async () => {
+  const token = localStorage.getItem("token");
+  try {
+    const response = await axios.post(
+      serverURI + "/predictPerformance/",
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data.data;
+  } catch (err) {
+    console.log(err);
+  }
 };

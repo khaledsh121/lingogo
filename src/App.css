@@ -5,3 +5,29 @@
 button:hover {
   cursor: pointer;
 }
+
+input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5vw;
+  min-width: 5px;
+  min-height: 5px;
+  height: 0.5vh;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.show-all-slides::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
